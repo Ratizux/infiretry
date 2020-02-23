@@ -3,7 +3,7 @@ $1
 while [ $? != 0 ]
 do
 	echo Failed
-	sleep $2
+	sleep 1
 	$1
 done
 echo Succeed
