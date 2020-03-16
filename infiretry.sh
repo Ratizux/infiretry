@@ -1,9 +1,12 @@
 #!/bin/bash
-$1
-while [ $? != 0 ]
+f="0"
+${1}
+while [ ${?} != 0 ]
 do
-	echo Failed
+	echo Fail
 	sleep 1
-	$1
+	f=$(expr ${f} + 1)
+	echo Tried ${f} time\(s\).
+	${1}
 done
-echo Succeed
+echo Success, retried ${f} time\(s\).
